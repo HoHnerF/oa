@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 查询所有图片 -->
+<mapper namespace="com.imooc.oa.dao.ProductDao">
+    <select id="list" resultType="Product">
+      select pid, pimage from product where pid =12
+    </select>
+
+    <insert id="save" parameterType="Product">
+       insert into product(pimage) values(#{pimage})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from product where id = #{id}
+    </delete>
+</mapper>
+
+
